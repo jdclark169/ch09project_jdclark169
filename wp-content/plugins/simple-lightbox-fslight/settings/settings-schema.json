@@ -1,0 +1,107 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Schema for Settings of Simple Lightbox for Gutenberg",
+    "description": "Validation schema for the plugin settings.",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+        "hrefTypes",
+        "postTypes",
+        "cssClassesToSearch",
+        "excludeIDs"
+    ],
+    "properties": {
+        "hrefTypes": {
+            "$id": "#root/hrefTypes",
+            "title": "Hreftypes",
+            "description": "Types of links that should be processed.",
+            "type": "array",
+            "default": [],
+            "uniqueItems": true,
+            "maxItems": 2,
+            "items": {
+                "type": "string",
+                "enum": [
+                    "Empty",
+                    "Media"
+                ]
+            }
+        },
+        "postTypes": {
+            "$id": "#root/postTypes",
+            "title": "Posttypes",
+            "description": "WordPress post types that should be processed, including custom post types.",
+            "type": "array",
+            "default": [],
+            "uniqueItems": true,
+            "items": {
+                "$id": "#root/postTypes/items",
+                "title": "Items",
+                "type": "string",
+                "maxLength": 20,
+                "minLength": 2,
+                "pattern": "^[a-z0-9_-]+$",
+                "examples": [
+                    "page",
+                    "post",
+                    "home",
+                    "front",
+                    "attachment",
+                    "archive",
+                    "date",
+                    "author",
+                    "tag",
+                    "category"
+                ]
+            }
+        },
+        "cssClassesToSearch": {
+            "$id": "#root/cssClassesToSearch",
+            "title": "Cssclassestosearch",
+            "description": "CSS class names identifying elements that should be processed.",
+            "type": "array",
+            "default": [],
+            "uniqueItems": true,
+            "items": {
+                "$id": "#root/cssClassesToSearch/items",
+                "title": "Items",
+                "type": "string",
+                "examples": [
+                    "block-image",
+                    "media-text",
+                    "block-video",
+                    "postie-image"
+                ],
+                "maxLength": 50,
+                "minLength": 2,
+                "pattern": "^-?[_a-zA-Z]+[_a-zA-Z0-9-]*$"
+            }
+        },
+        "excludeIDs": {
+            "$id": "#root/excludeIDs",
+            "title": "IDs to exclude",
+            "description": "WordPress post IDs excluded from processing.",
+            "type": "array",
+            "default": [],
+            "uniqueItems": true,
+            "items": {
+                "$id": "#root/excludeIDs/items",
+                "title": "Items",
+                "type": "integer",
+                "default": 0,
+                "minimum": 0
+            }
+        },
+        "rewriteScope": {
+            "title": "Rewrite scope",
+            "description": "Defines whether rewriting is limited to post content, applied to the complete HTML body, or performed client-side.",
+            "type": "string",
+            "default": "",
+            "enum": [
+                "",
+                "body",
+                "javascript"
+            ]
+        }
+    }
+}

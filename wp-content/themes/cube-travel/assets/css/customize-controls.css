@@ -1,0 +1,31 @@
+/*
+* Rubik Mag Customize Controls CSS File
+*/
+
+#customize-theme-controls .control-section-cube-travel-upsell {
+	display: block !important; 
+}
+
+.wp-core-ui .control-section-cube-travel-upsell .button-secondary {
+    color: #fff;
+    display: block;
+    margin-top: -6px;
+    font-weight: 600;
+    background: #4CA54C;
+    border-color: #4CA54C;
+    box-shadow: none;
+    min-height: auto;
+    line-height: 1.3;
+    padding: 8px 12px;
+}
+
+.wp-core-ui .control-section-cube-travel-upsell .button-secondary:hover,
+.wp-core-ui .control-section-cube-travel-upsell .button-secondary:focus {
+	background: #3D843D;
+	border-color: #3D843D; 
+}
+
+.wp-core-ui .control-section-cube-travel-upsell .accordion-section-title:after {
+	display: none;
+}
+

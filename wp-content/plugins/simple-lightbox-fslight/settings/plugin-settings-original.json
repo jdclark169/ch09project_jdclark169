@@ -1,0 +1,19 @@
+{
+    "hrefTypes": [
+        "Empty",
+        "Media"
+    ],
+    "postTypes": [
+        "page",
+        "post"
+    ],
+    "cssClassesToSearch": [
+        "wp-block-image",
+        "wp-block-media-text",
+        "wp-block-video",
+        "postie-image"
+    ],
+    "excludeIDs": [
+        0
+    ]
+}
